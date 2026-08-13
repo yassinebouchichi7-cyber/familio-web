@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Naskh+Arabic:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Obsidian (Black shades) */
+  --color-obsidian-950: #030303;
+  --color-obsidian-900: #0A0A0A;
+  --color-obsidian-800: #121212;
+  --color-obsidian-700: #1A1A1A;
+  --color-obsidian-600: #252525;
+
+  /* Crimson (Red shades) */
+  --color-crimson: #E50914;
+  --color-crimson-hover: #B80710;
+  --color-crimson-dark: #8B0000;
+  --color-crimson-glow: rgba(229, 9, 20, 0.15);
+
+  /* Titanium (Whites & Grays) */
+  --color-titanium-light: #F5F5F7;
+  --color-titanium-gray: #8E8E93;
+  --color-titanium-dark: #1C1C1E;
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 40px 5px rgba(229, 9, 20, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 80px 15px rgba(229, 9, 20, 0.35);
+  }
+}
+
+/* Base Styles */
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  color: #F5F5F7;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection Color — Red on Black */
+::selection {
+  background-color: #E50914;
+  color: #FFFFFF;
+}
+
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E50914;
+}
+
+/* Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(229, 9, 20, 0.4);
+}
+
+.red-glow {
+  box-shadow: 0 0 60px 10px rgba(229, 9, 20, 0.2);
+}
+
+.glass {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* Arabic Language Support */
+html[dir="rtl"] body {
+  font-family: 'Noto Naskh Arabic', var(--font-sans);
+}
+
+html[dir="rtl"] .font-serif {
+  font-family: 'Noto Naskh Arabic', var(--font-serif);
+}
